@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.caucho.hessian.client.HessianProxyFactory"/>
+<fullyQualifiedTypeName name="com.learn.hessian.api.Hello"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
+<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ThreadPoolExecutor"/>
+<fullyQualifiedTypeName name="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="com.job.CountTask"/>
+<fullyQualifiedTypeName name="org.apache.activemq.spring.ActiveMQConnectionFactory"/>
+<fullyQualifiedTypeName name="org.apache.activemq.broker.region.Destination"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="javax.jms.MessageListener"/>
+<fullyQualifiedTypeName name="javax.jms.Destination"/>
+<fullyQualifiedTypeName name="javax.jms.Connection"/>
+<fullyQualifiedTypeName name="org.apache.activemq.ActiveMQConnectionFactory"/>
+<fullyQualifiedTypeName name="javax.jms.JMSException"/>
+</qualifiedTypeNameHistroy>

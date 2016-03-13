@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- san为true的时候表示配置文件改动的时候将会被重新加载   scanPeriod:设置间隔多长时间扫描配置文件 debug:设置是否打印内部日志-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+ 	<property name="logger_name" value="loggerName" ></property>
+ 	<contextName>${logger_name}</contextName>
+ 	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>   
+</configuration>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- san为true的时候表示配置文件改动的时候将会被重新加载   scanPeriod:设置间隔多长时间扫描配置文件 debug:设置是否打印内部日志-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+ 	<property name="logger_name" value="loggerName" ></property>
+ 	<contextName>${logger_name}</contextName>
+ 	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>   
+	<!-- 第一种配置方式:只配置root -->
+	<!-- <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>  
+		</encoder>
+	</appender>
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root> -->
+	
+<!-- 	<!-- 第二次配置方式:帶有單個logger的配置，不指定級別，不指定appender -->	
+<!-- 	 <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>   -->
+<!-- 		</encoder> -->
+<!-- 	</appender> -->
+	
+<!-- 	<!-- logback為java中的包:掃描logback包中的所有類日誌進行打印，但是并沒有設置打印級別，所以繼承它的上級 -->
+<!-- 	     (root)的打印級別"DEBUG" -->
+<!-- 	          沒有addtivity，默認為true，將loger打印信息向上傳遞 -->
+<!-- 	         沒有設置appender，此loger本身不打印任何信息 -->
+<!-- 	 --> 
+<!-- 	<logger name="logback"/> -->
+	
+<!-- 	<root level="DEBUG"> -->
+<!-- 		<appender-ref ref="STDOUT" /> -->
+<!-- 	</root> -->
+   
+    <!-- 第三种配置方式:带有多个logger的配置,指定级别，指定appender -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>  
+		</encoder>
+	</appender>
+	
+	<!-- logback为java的包，将控制logback包下所有类的日志打印
+	           没有设置的打印级别，所以继承它的上级root的日志打印级别为Error
+	           没有设置addtivity，默认为true，将此logger的打印信息向上传递
+	     
+	-->
+	<logger name="logback"/>
+	<!-- 类的全路径名称 com.zgx.logback.LogbackDemo -->
+	<logger name="com.zgx.logback.LogbackDemo" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	
+	<root level="Error">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

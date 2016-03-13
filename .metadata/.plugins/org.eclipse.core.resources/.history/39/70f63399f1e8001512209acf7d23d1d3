@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- san为true的时候表示配置文件改动的时候将会被重新加载  -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	
+</configuration>

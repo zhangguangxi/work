@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- san为true的时候表示配置文件改动的时候将会被重新加载   scanPeriod:设置间隔多长时间扫描配置文件 debug:设置是否打印内部日志-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+ 	<property name="logger_name" value="loggerName" ></property>
+ 	<contextName>${logger_name}</contextName>
+ 	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>   
+	<!-- 第一种配置方式:只配置root -->
+	<!-- <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>  
+		</encoder>
+	</appender>
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root> -->
+	
+	<!-- 第二次配置方式:帶有logger的配置，不指定級別，不指定appender -->	
+	 <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>  
+		</encoder>
+	</appender>
+	
+	<logger></logger>
+	
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

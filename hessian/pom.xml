@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.learn</groupId>
+  <artifactId>hessian</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>hessian</name>
+  <modules>
+  	<module>hessian-api</module>
+  	<module>hessian-server</module>
+    <module>hessian-provider</module>
+    <module>hessian-job</module>
+  </modules>
+  
+  <distributionManagement>
+  	<snapshotRepository>
+  		<id>nexus-snapshot</id>
+  		<name>nexus distribution snapshot repository</name>
+  		<url>http://192.168.1.104:9992/nexus/content/repositories/snapshots/</url>
+  	</snapshotRepository>
+  	<repository>
+  		<id>nexus-release</id>
+  		<name>nexus distribution release repository</name>
+  		<url>http://192.168.1.104:9992/nexus/content/repositories/releases/</url>
+  	</repository>
+  </distributionManagement>
+  
+</project>

@@ -1,0 +1,47 @@
+/*
+ * Copyright (C) 2015 earth GuangHui Co.,Ltd All Rights Reserved.
+ * 未经本公司正式书面同意，其他任何个人、团体不得使用、复制、修改或发布本软件.
+ * 版权所有深圳合时代金融服务有限公司 www.heshidai.com.
+ */
+package com.job;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
+/**
+ * spring线程池使用
+ * 
+ * @version 2016年2月27日下午11:54:56
+ * @author guangxi.zhang
+ */
+public class TestTask {
+    public static void main(String[] args) {
+        //线程初始化有两种方式
+   /*     //1、直接启动
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        //设置线程池中使用的缓冲队列
+        executor.setQueueCapacity(200);
+        //设置线程池维护线程的最少数量
+        executor.setCorePoolSize(5);
+        //设置线程池维护线程的最大数量
+        executor.setMaxPoolSize(20);
+        //设置线程池维护线程所允许的空闲时间
+        executor.setKeepAliveSeconds(3000);
+        executor.initialize();*/
+        //2、通过配置文件启动
+       ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+       ThreadPoolTaskExecutor executor = (ThreadPoolTaskExecutor)context.getBean("taskExecutor");
+       
+       // Thread thread = new Thread(new CountTask());
+       
+       CountTask countTask = new CountTask();
+       for (int i = 1; i <= 100; i++) {
+           executor.execute(countTask);
+       }
+       //获取当前线程池中活动的线程数
+       int count = executor.getActiveCount();
+       System.out.println("当前活动的线程数量:"+count);
+       
+    }
+}

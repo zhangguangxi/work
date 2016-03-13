@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Work\Workspace\eclipse\learn\hessian"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="hessian-job"/>
+			<item value="hessian-server"/>
+			<item value="hessian-api"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="ra"/>
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\Work\Workspace\eclipse\learn\assist"/>
+			<item value="D:\Work\Workspace\eclipse\learn\tag"/>
+			<item value="D:\Work\Workspace\eclipse\learn\hessian\hessian-server"/>
+			<item value="D:\Work\Workspace\eclipse\learn"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.learn.asist"/>
+			<item value="org.hessian.job"/>
+		</list>
+		<list key="groupId">
+			<item value="com.learn"/>
+		</list>
+		<list key="artifactId">
+			<item value="asist"/>
+			<item value="hessian-job"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

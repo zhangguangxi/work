@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="guangHui">
+  <check-configuration name="guangHui" location="D:\Download\Tools\代码检查&amp;&amp;格式化插件\hsd_checkstyle.xml" type="external" description="">
+    <additional-data name="protect-config-file" value="false"/>
+  </check-configuration>
+</checkstyle-configurations>

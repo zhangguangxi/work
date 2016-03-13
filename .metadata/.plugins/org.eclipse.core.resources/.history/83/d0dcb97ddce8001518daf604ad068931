@@ -1,0 +1,43 @@
+/*
+ * Copyright (C) 2015 earth GuangHui Co.,Ltd All Rights Reserved.
+ * 未经本公司正式书面同意，其他任何个人、团体不得使用、复制、修改或发布本软件.
+ * 版权所有深圳合时代金融服务有限公司 www.heshidai.com.
+ */
+package com.learn.asist.jms;
+
+import javax.jms.JMSException;
+
+/**
+ * Java 消息服务测试
+ * @version 2016年2月29日下午11:46:47
+ * @author guangxi.zhang
+ */
+public class Test {
+    public static void main(String[] args) throws JMSException, Exception {
+//        JmsSender sender = new JmsSender();
+//        JmsReceiver receiver = new JmsReceiver();
+//        
+//        sender.sendMessage("bytes");
+//        sender.close();
+//        
+//        receiver.receiveMessage();
+//        receiver.close();
+//        new Test().test1((Object)null);
+        if (null instanceof java.lang.Object)
+        { System.out.println("null 属于java.lang.Object类型"); } 
+        else if(null instanceof java.lang.String) { System.out.println("null不属于 java.lang.String类型"); }
+        else{
+            System.out.println("");
+        }
+      } 
+    
+    public void test1(Object o){
+        System.out.println("object");
+    }
+    
+    public void test1(String str){
+        System.out.println("string");
+    }
+    
+    
+}

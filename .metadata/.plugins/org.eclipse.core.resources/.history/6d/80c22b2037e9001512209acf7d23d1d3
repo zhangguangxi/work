@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- san为true的时候表示配置文件改动的时候将会被重新加载 scanPeriod:设置间隔多长时间扫描配置文件 debug:设置是否打印内部日志 -->
+<configuration
+	scan="true"
+	scanPeriod="60 seconds"
+	debug="false">
+	<property
+		name="logger_name"
+		value="loggerName"></property>
+	<contextName>${logger_name}</contextName>
+	<timestamp
+		key="bySecond"
+		datePattern="yyyyMMdd'T'HHmmss" />
+	<!-- 第一种配置方式:只配置root -->
+
+	<!-- 配置appender将日志信息打印到控制台 -->
+	<appender
+		name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- <root level="INFO">将root的打印级别设置为“INFO”，指定了名字为“STDOUT”的appender。 当执行logback.LogbackDemo类的main方法时，root将级别为“INFO”及大于“INFO”的日志信息交给已经配置好的名为“STDOUT”的appender处理，“STDOUT”appender将信息打印到控制台 -->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
