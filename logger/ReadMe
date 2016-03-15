@@ -11,7 +11,7 @@
 注:<loger> <root>可以包含零个或多个<appender-ref>元素,标识这个appender将会被添加到loger
 
 日誌級別從(包含面從大到小)
-ALL > DEBUG  >  INFO > WARN  > ERROR > FATAL >  OFF
+ALL > trace> DEBUG  >  INFO > WARN  > ERROR > FATAL >  OFF
 
 
 appender
@@ -61,10 +61,11 @@ RollingFileAppender
       <filter>:过滤器，执行一个过滤器会返回个枚举值，即DENY,NEUTRAL,ACCEPT其中之一
         	   返回DENY日志将立即被炮姐不再经过其他过滤器;返回NEUTRAL,有序列表里的下个过滤器节奏处日志
         	   返回ACCPET，日志会被立即处理，不再经过剩余过滤器
-        	 过滤器被添加到<Appender>中,为<Appender>添加一个或多个过滤器后，可以用任意条件对日志过滤
-        	 Appender有多个过滤器时,按照顺序执行    			    							 				   
+        	 过滤器被添加到<Appender>中,为<Appender> 添加一个或多个过滤器后，可以用任意条件对日志过滤
+        	 Appender有多个过滤器时,按照顺序执行   
+        	 
+ 	 						 				   
 		     							 				   		   	   			   
-		               
 	               			 				
 		
 	

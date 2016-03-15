@@ -19,11 +19,11 @@ public class LogbackDemo {
     
     public static void main(String[] args) {
         log.info("main>>>>>>开始");
-        log.trace("=====trace");
-        log.debug("=====debug");
-        log.info("=====info");
-        log.warn("=====warn");
-        log.error("=====error");
+        log.trace("=====trace1");
+        log.debug("=====debug2");
+        log.info("=====info3");
+        log.warn("=====warn4");
+        log.error("=====error5");
         log.info("main>>>>>>结束");
     }
 }
