@@ -1,0 +1,12 @@
+203  [main] INFO  com.zgx.logback.LogbackDemo - main>>>>>>开始
+205  [main] DEBUG com.zgx.logback.LogbackDemo - =====debug
+206  [main] INFO  com.zgx.logback.LogbackDemo - =====info
+206  [main] WARN  com.zgx.logback.LogbackDemo - =====warn
+206  [main] ERROR com.zgx.logback.LogbackDemo - =====error
+206  [main] INFO  com.zgx.logback.LogbackDemo - main>>>>>>结束
+202  [main] INFO  com.zgx.logback.LogbackDemo - main>>>>>>开始
+205  [main] DEBUG com.zgx.logback.LogbackDemo - =====debug
+205  [main] INFO  com.zgx.logback.LogbackDemo - =====info
+205  [main] WARN  com.zgx.logback.LogbackDemo - =====warn
+205  [main] ERROR com.zgx.logback.LogbackDemo - =====error
+205  [main] INFO  com.zgx.logback.LogbackDemo - main>>>>>>结束

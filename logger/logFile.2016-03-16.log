@@ -1,0 +1,6 @@
+188  [main] INFO  com.zgx.logback.LogbackDemo - main>>>>>>开始
+190  [main] DEBUG com.zgx.logback.LogbackDemo - =====debug
+190  [main] INFO  com.zgx.logback.LogbackDemo - =====info
+190  [main] WARN  com.zgx.logback.LogbackDemo - =====warn
+190  [main] ERROR com.zgx.logback.LogbackDemo - =====error
+190  [main] INFO  com.zgx.logback.LogbackDemo - main>>>>>>结束
