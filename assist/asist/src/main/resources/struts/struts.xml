@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 导入所有配置文件，只需路径命名规则一致就能读取 -->
+	<include file="struts/struts2-*.xml" />
+	<include file="struts/*/struts2-*.xml" />
+	<include file="struts/*/*/struts2-*.xml" />
+	
+	<!-- 其他package继承此package -->
+	<package name="default" extends="struts-default">
+			<!-- 自定义拦截器 -->
+			<!-- 定义全局处理结果 -->
+			<!-- 定义全局异常处理(必须在global-results后面 ) -->
+	</package>
+</struts>

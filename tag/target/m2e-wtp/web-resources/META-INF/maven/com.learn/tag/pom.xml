@@ -15,11 +15,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.common</groupId>
-			<artifactId>base</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -41,11 +36,10 @@
 		<!-- 开发的时候使用,部署到服务器的时候需要移除 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
 
 
@@ -55,12 +49,8 @@
 
 		<finalName>tag</finalName>
 		<plugins>
-			<!-- 内置容器jetty 
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.12.v20130726</version>
-			</plugin>-->
+			<!-- 内置容器jetty <plugin> <groupId>org.mortbay.jetty</groupId> <artifactId>jetty-maven-plugin</artifactId> 
+				<version>8.1.12.v20130726</version> </plugin> -->
 			<!-- 将项目所有的依赖(jar)copy到指定目录中 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
