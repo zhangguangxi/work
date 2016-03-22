@@ -33,6 +33,10 @@ public class AsistConstant {
     
     public static Properties props = new Properties();
     
+    public static void init() throws Exception {
+        initProperty();
+    }
+    
     /**
      * 读取初始化配置
      * 
@@ -44,15 +48,15 @@ public class AsistConstant {
             String systemDir = FileUtil.getServerDir();
             Properties ps;
             FileInputStream input;
-            CONFIG_PATH = systemDir +"classes/config.properties";
+            CONFIG_PATH = systemDir + "classes/config.properties";
             input = new FileInputStream(CONFIG_PATH);
-            ps= new Properties();
+            ps = new Properties();
             ps.load(input);
             props.putAll(ps);
             input.close();
         }
         catch (Exception e) {
-            log.error("读取初始化配置异常！",e);
+            log.error("读取初始化配置异常！", e);
         }
     }
     

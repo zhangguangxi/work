@@ -19,7 +19,9 @@ public class FileUtil {
      */
     public static String getServerDir(){
         String saveDir = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+        saveDir = saveDir.substring(0, saveDir.indexOf("classes/"));
         saveDir = saveDir.replaceAll("20%", "");
         return saveDir;
-    } 
+    }
+    
 }

@@ -4,7 +4,7 @@
 <urlrewrite>
 	<rule>
 		<note>login</note>
-		<from>^/login.html</from>
+		<from>/login.html</from>
 		<to type="forward">/login.act</to>
 	</rule>
 </urlrewrite>

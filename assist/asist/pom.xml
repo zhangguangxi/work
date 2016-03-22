@@ -5,10 +5,40 @@
 	<groupId>com.learn</groupId>
 	<artifactId>asist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>asist</name>
 	<url>http://maven.apache.org</url>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<running.env>dev</running.env>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<running.env>test</running.env>
+			</properties>
+		</profile>
+		<profile>
+			<id>pre</id>
+			<properties>
+				<running.env>pre</running.env>
+			</properties>
+		</profile>
+		<profile>
+			<id>online</id>
+			<properties>
+				<running.env>online</running.env>
+			</properties>
+		</profile>
+	</profiles>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -118,6 +148,14 @@
 			<artifactId>urlrewritefilter</artifactId>
 			<version>4.0.4</version>
 		</dependency>
+		
+		<!-- druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.15</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
