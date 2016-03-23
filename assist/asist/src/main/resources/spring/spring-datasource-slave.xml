@@ -18,15 +18,14 @@
 	<bean id="dataSourceMaster" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<!-- 基本属性 url、user、password -->
-		<property name="url" value="${jdbc.url}" />
-		<property name="username" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
+		<property name="url" value="${jdbc2.url}" />
+		<property name="username" value="${jdbc2.username}" />
+		<property name="password" value="${jdbc2.password}" />
 
 		<!-- 配置初始化大小、最小、最大 -->
 		<property name="initialSize" value="1" />
-		<property name="minIdle" value="${jdbc.pool.minIdle}" />
-		<property name="maxActive" value="${jdbc.pool.maxActive}" />
-
+		<property name="minIdle" value="${jdbc2.pool.minIdle}" />
+		<property name="maxActive" value="${jdbc2.pool.maxActive}" />
 
 		<!-- 配置获取连接等待超时的时间 -->
 		<property name="maxWait" value="60000" />
@@ -55,21 +54,21 @@
 		<!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
 		<property name="filters" value="stat" />
 	</bean>
-
-	<bean id="dynamicDataSource" class="com.asist.utils.slave.DynamicDataSourceUtil">
+	
+	<!-- <bean id="dynamicDataSource" class="com.asist.utils.slave.DynamicDataSourceUtil">
 		<property name="targetDataSources">
 			<map key-type="java.lang.String">
 				<entry value-ref="dataSourceMaster" key="dataSourceMaster"></entry>
-<!-- 				<entry value-ref="dataSourceSlave" key="dataSourceSlave"></entry> -->
+				<entry value-ref="dataSourceSlave" key="dataSourceSlave"></entry>
 			</map>
 		</property>
 		<property name="defaultTargetDataSource" ref="dataSourceMaster">
 		</property>
 	</bean>
 
-	<!-- ============================================================= -->
-	<!-- TransactionManager -->
-	<!-- ============================================================= -->
+	=============================================================
+	TransactionManager
+	=============================================================
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dynamicDataSource" />
@@ -79,9 +78,9 @@
 		<property name="transactionManager" ref="transactionManager" />
 	</bean>
 
-	<!-- ============================================================= -->
-	<!-- transaction factory -->
-	<!-- ============================================================= -->
+	=============================================================
+	transaction factory
+	=============================================================
 	<bean id="transactionInterceptor"
 		class="org.springframework.transaction.interceptor.TransactionInterceptor">
 		<property name="transactionManager" ref="transactionManager" />
@@ -98,7 +97,8 @@
 		</property>
 	</bean>
 
-	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
 		<property name="beanNames">
 			<list>
 				<value>*Service</value>
@@ -111,7 +111,8 @@
 		</property>
 	</bean>
 
-	<bean class="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor">
+	<bean
+		class="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor">
 		<property name="transactionInterceptor" ref="transactionInterceptor" />
-	</bean>
+	</bean> -->
 </beans>

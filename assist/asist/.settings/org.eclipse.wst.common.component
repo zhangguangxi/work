@@ -6,5 +6,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="context-root" value="asist"/>
         <property name="java-output-path" value="/asist/target/classes"/>
+        <property name="component.exclusion.patterns" value="WEB-INF/classes/config/**"/>
     </wb-module>
 </project-modules>

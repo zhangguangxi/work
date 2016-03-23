@@ -7,11 +7,17 @@
 	<include file="struts/struts2-*.xml" />
 	<include file="struts/*/struts2-*.xml" />
 	<include file="struts/*/*/struts2-*.xml" />
-	
+
 	<!-- 其他package继承此package -->
 	<package name="default" extends="struts-default">
-			<!-- 自定义拦截器 -->
-			<!-- 定义全局处理结果 -->
-			<!-- 定义全局异常处理(必须在global-results后面 ) -->
+		<!-- 自定义拦截器 -->
+		<!-- 定义全局处理结果 -->
+		<!-- 定义全局异常处理(必须在global-results后面 ) -->
+
+<!-- 		<global-results> -->
+<!-- 			<result name="error">/error/500.jsp</result> -->
+<!-- 			<result name="404">/error/404.jsp</result> -->
+<!-- 			<result name="exceptions">/error/500.jsp</result>java.lang.Exception异常处理界面 -->
+<!-- 		</global-results> -->
 	</package>
 </struts>

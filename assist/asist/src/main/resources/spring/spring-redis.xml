@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+	<!-- Redis连接池配置 -->
+	<bean id="jedisPoolConfigs" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="${redis.maxTotal}" />
+		<property name="maxIdle" value="${redis.maxIdle}" />
+		<property name="minIdle" value="${redis.minIdle}" />
+		<property name="maxWaitMillis" value="${redis.maxWaitMillis}"></property>
+		<property name="testOnBorrow" value="${redis.testOnBorrow}" />
+	</bean>
+	<!-- 读写Redis配置 -->
+	<bean id="readRedisSharedPool" class="redis.clients.jedis.ShardedJedisPool"
+		destroy-method="destroy">
+		<constructor-arg index="0" ref="jedisPoolConfigs" />
+		<constructor-arg index="1">
+			<list>
+				<bean class="redis.clients.jedis.JedisShardInfo">
+					<constructor-arg index="0" value="${redis.read.host}" />
+					<constructor-arg index="1" value="${redis.read.port}"
+						type="int" />
+					<constructor-arg index="2" value="${redis.read.timeout}"
+						type="int" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="writeRedisSharedPool" class="redis.clients.jedis.ShardedJedisPool"
+		destroy-method="destroy">
+		<constructor-arg index="0" ref="jedisPoolConfigs" />
+		<constructor-arg index="1">
+			<list>
+				<bean class="redis.clients.jedis.JedisShardInfo">
+					<constructor-arg index="0" value="${redis.write.host}" />
+					<constructor-arg index="1" value="${redis.write.port}"
+						type="int" />
+					<constructor-arg index="2" value="${redis.write.timeout}"
+						type="int" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="readOrWriteRedisHelper" class="com.asist.redis.ReadWriteRedisHelper">
+		<property name="readJedisPool" ref="readRedisSharedPool" />
+		<property name="writeJedisPool" ref="writeRedisSharedPool" />
+	</bean>
+
+	<bean id="activeCaches" class="com.asist.redis.RedisUtil">
+		<property name="redisHelperUtil" ref="readOrWriteRedisHelper" />
+	</bean>
+</beans>
+

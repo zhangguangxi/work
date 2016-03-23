@@ -42,6 +42,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<asist.version>asist</asist.version>
 	</properties>
 
 	<dependencies>
@@ -148,12 +149,23 @@
 			<artifactId>urlrewritefilter</artifactId>
 			<version>4.0.4</version>
 		</dependency>
-		
+
 		<!-- druid -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 			<version>1.0.15</version>
+		</dependency>
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
 		</dependency>
 
 	</dependencies>
@@ -161,6 +173,7 @@
 	<build>
 		<finalName>asist</finalName>
 		<plugins>
+			<!-- 编译位于src/main/java/目录下的主源码 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -169,6 +182,32 @@
 					<source>1.7</source>
 					<target>1.7</target>
 					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- maven项目动态打包 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<warName>${asist.version}</warName>
+					<archive>
+						<manifestEntries>
+							<Manifest-Version>${m.version}</Manifest-Version>
+						</manifestEntries>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<!-- profile + maven-war-plugin -->
+					<webResources>
+						<resource>
+							<directory>src/main/resources/config/${running.env}</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+						</resource>
+					</webResources>
+					<packagingExcludes>
+						WEB-INF/classes/config/**
+					</packagingExcludes>
 				</configuration>
 			</plugin>
 		</plugins>

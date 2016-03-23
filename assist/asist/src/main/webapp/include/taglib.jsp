@@ -1,8 +1,8 @@
 <%@page import="com.asist.utils.ResourceProperty"%>
+<%@ page import="java.util.Date"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sf" uri="/my-tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
     //禁用IE缓存
